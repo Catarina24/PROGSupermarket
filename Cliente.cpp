@@ -71,7 +71,7 @@ float Cliente::getVolCompras() const{
 }
 
 Data Cliente::getCartaoCliente() const{
-	return this->cartaoCliente;
+	return cartaoCliente;
 }
 
 void Cliente::setId(unsigned int id){

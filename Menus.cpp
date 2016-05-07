@@ -67,7 +67,7 @@ unsigned short int menuGestaoClientes(){
 unsigned short int menuEditarCliente(){
 	unsigned short int opcao;
 	clearScreen();
-	cout << TAB_BIG << "Menu Editar Cliente" << endl;
+	cout << TAB_BIG << "Menu Alterar Cliente" << endl;
 	cout << endl;
 	cout << TAB << "1 - Modificar o nome" << endl;
 	cout << TAB << "2 - Modificar a data de adesão" << endl;
@@ -82,10 +82,6 @@ unsigned short int menuEditarCliente(){
 	return opcao;
 }
 
-/*	cout << TAB << "1 - Adicionar cliente" << endl;
-cout << TAB << "2 - Alterar cliente" << endl;
-cout << TAB << "3 - Remover cliente" << endl;
-cout << TAB << "4 - Listar os clientes por ordem alfabetica" << endl;*/
 
 void opcoesGestaoClientes(VendeMaisMais & supermercado){
 	unsigned int opcao, op;
@@ -95,12 +91,14 @@ void opcoesGestaoClientes(VendeMaisMais & supermercado){
 		switch (opcao){
 
 		case 1:
+			//criar
 			cout << "Qual o nome do cliente: ";
 			getline(cin, nome);
 			//Adicionar cliente
 			break;
 
 		case 2:
+			//alterar
 			cout << "Qual o nome do cliente: ";
 			getline(cin, nome);
 			while ((op = menuEditarCliente()))
@@ -121,17 +119,18 @@ void opcoesGestaoClientes(VendeMaisMais & supermercado){
 			getline(cin, nome);
 			supermercado.mostraInformacaoCliente(nome);*/
 			break;
-
-			//Remover cliente
+			
 		case 3:
+			//Remover cliente
 			cout << "Qual o nome do cliente: ";
 			getline(cin, nome);
 			//Remove cliente
 
 			break;
 
-			//Listar os clientes por ordem alfabetica
+			
 		case 4:
+			//Listar os clientes por ordem alfabetica
 			supermercado.listarClientesOrdemAlfa();
 
 			break;
@@ -177,16 +176,12 @@ void opcoesGestaoTransacoes(VendeMaisMais & supermercado){
 
 			//ver transacoes de um cliente entre duas datas
 			break;
-		case 3:
+		/*case 3:
 			//listar todas as transacoes por ordem cronologica
 			break;
 		case 4:
-			cout << "Qual o nome do cliente: ";
-			getline(cin, nome);
-			//QUAIS OS PRODUTOS QUE FORAM COMPRADOS
-			//QUAL O PRECO DELES
-			//ACRESCENTAR O MONTANTE TOTAL DASA COMPRAS AO CLIENTE
-			break;
+			
+			break;*/
 	}
 
 }
@@ -225,6 +220,26 @@ unsigned short int menuVerInformacaoCliente(){
 
 	return opcao;
 }
+
+void opcoesVerInformacaoClientes(VendeMaisMais & supermercado){
+	unsigned int opcao;
+	string nome, dat, dat2;
+	while ((opcao = menuVerInformacaoCliente()))
+		switch (opcao){
+		case 1:
+			//Um cliente
+			cout << "Qual o nome do cliente: ";
+			getline(cin, nome);
+			//ver informacoes de um cliente
+			break;
+		case 2:
+			//Todos os clientes
+
+			//ver informacoes de todos os clientes
+			break;
+	}
+}
+
 unsigned short int menuVerInformacaoTransacoes(){
 	unsigned short int opcao;
 	clearScreen();
@@ -242,6 +257,37 @@ unsigned short int menuVerInformacaoTransacoes(){
 		return 0;
 
 	return opcao;
+}
+
+void opcoesVerInformacaoTransacoes(VendeMaisMais & supermercado){
+	unsigned int opcao;
+	string nome, data, data2;
+	while ((opcao = menuVerInformacaoTransacoes()))
+		switch (opcao){
+		case 1:
+			//De um cliente
+			cout << "Qual o nome do cliente: " << endl;
+			getline(cin, nome);
+			//ver transacoes de um cliente
+			break;
+		case 2:
+			//De um dia
+			cout << "Introduza a data" << endl;
+			getline(cin, data, '\n');
+			//ver transacoes de uma data
+			break;
+		case 3:
+			//entre duas datas especificas
+			cout << "Introduza a primeira data" << endl;
+			getline(cin, data, '\n');
+			cout << "Introduza a segunda data" << endl;
+			getline(cin, data2, '\n');
+			//ver transacoes entre as duas datas
+			break;
+		case 4:
+			//ver todas as transacoes
+			break;
+	}
 }
 
 
@@ -295,26 +341,56 @@ unsigned short int menuInicial(){
 }
 
 void opcoesIniciais(VendeMaisMais & supermercado){
-	unsigned int opcao;
+	unsigned int opcao, op;
 
 
 	while ((opcao = menuInicial()))
 		switch (opcao){
-		//Menu gestao clientes
-		case 1: opcoesGestaoClientes(supermercado);
+		
+		case 1:
+			//Menu gestao clientes
+			opcoesGestaoClientes(supermercado);
 			break;
+			
+		case 2:
 			//menu gestao transacoes
-		case 2: opcoesGestaoTransacoes(supermercado);
+			opcoesGestaoTransacoes(supermercado);
 			break;
-			//efetuar compras
-			//supermercado.listarProdutos();
+			
 		case 3:
+			//efetuar compras
+		//	cout << "Qual o nome do cliente: ";
+			//getline(cin, nome);
+			//QUAIS OS PRODUTOS QUE FORAM COMPRADOS
+			//QUAL O PRECO DELES
+			//ACRESCENTAR O MONTANTE TOTAL DASA COMPRAS AO CLIENTE
+		
+			
 			break;
-			//visualizar informcao
+			
 		case 4:
+			//visualizar informcao
+			
+			while((op = menuVerInformacao()))
+				switch (op){
+				case 1:
+					//Clientes
+					opcoesVerInformacaoClientes(supermercado);
+					break;
+				case 2:
+					//Transacoes
+					opcoesVerInformacaoTransacoes(supermercado);
+					break;
+				case 3:
+					//Produtos
+					supermercado.listarProdutos();
+					break;
+			}
 			break;
+			
+		case 5: 
 			//Recomendacoes
-		case 5: opcoesRecomendacao(supermercado);
+			opcoesRecomendacao(supermercado);
 			break;
 	}
 
