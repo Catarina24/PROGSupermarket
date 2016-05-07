@@ -1,0 +1,33 @@
+Menu Principal
+1. Menu gestao clientes
+2.menu gestao transacoes
+3. efetuar compras
+4.visualizar informacao
+5.recomendacao
+6.sair do programa
+
+Menu gestao clientes
+1. Criar
+2. Alterar
+3.Remover
+4.Listar os clientes(por ordem alfabetica)
+5.sair para o menu principal
+
+Menu gestao transacoes
+1. listar todas as transacoes num intervalo de data
+2. listar por ordenm cronologica as transacoes de um clientes
+
+Menu Visualizar informacao
+1.clientes
+2.transacoes
+3.produtos // todos os produtos que existem na loja
+
+Menu Visualizar informacao clientes
+1. um cliente
+2. todos os clientes
+
+menu Visualizar informacao transacoes
+1.de um cliente
+2.de um dia
+3. entre duas datas especificas
+4. todas as transacoes
