@@ -3,7 +3,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <iomanip>
+#include <sstream>
+#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "defs.h"
 #include "utils.h"
