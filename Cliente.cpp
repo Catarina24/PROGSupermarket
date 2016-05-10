@@ -108,8 +108,5 @@ ostream& operator<<(ostream& out, const Cliente & cli){
 
 
 bool operator<(const Cliente &cli1, const Cliente &cli2){
-	if (cli1.nome < cli2.nome)
-		return true;
-	else
-		return false;
+	return (cli1.nome < cli2.nome);
 }

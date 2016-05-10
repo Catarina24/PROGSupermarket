@@ -1,6 +1,5 @@
 #include "Data.h"
 
-
 Data::Data(string dataStr){ // data na forma DD/MM/AAA
 	int pos1 = -5;
 	int pos2 = -5;

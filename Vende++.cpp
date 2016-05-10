@@ -45,16 +45,20 @@ void VendeMaisMais::setMaxClientesId(unsigned int id){
 // lista os clientes por ordem alfabetica crescente
 void VendeMaisMais::listarClientesOrdemAlfa() const{
 
-	for (unsigned int i = 0; i < clientes.size(); i++){
-
-	}
+	sort(clientes.begin(), clientes.begin());
 
 }
 
 // mostra a informacao individual de um cliente
 void VendeMaisMais::mostraInformacaoCliente(string nome){
-
-
+	while (true){
+		for (unsigned int i = 0; i < clientes.size(); i++){
+			if (clientes[i].getNome() == nome){
+				cout << clientes[i];
+				break;
+			}
+		}
+	}
 
 }
 
@@ -65,7 +69,7 @@ void VendeMaisMais::mostraInformacaoCliente(string nome){
 // lisat os produto por ordem alfabetica crescente
 void VendeMaisMais::listarProdutos() const{
 
-	// A IMPLEMENTAR 
+	sort(produtos.begin(), produtos.begin());
 
 }
 

@@ -25,7 +25,7 @@ void Transacao::setProdutos(vector<string> vec){
 }
 
 Transacao::Transacao(ifstream & in){ // le uma transacao na forma de  idcliente ; data ; lista produtos
-	stringstream ss;
+/*	stringstream ss;
 	string str;
 	int pos1 = -5;
 	int pos2 = -5;
@@ -45,7 +45,7 @@ Transacao::Transacao(ifstream & in){ // le uma transacao na forma de  idcliente 
 	idCliente = stoi(str.substr(0, pos1 - 1));
 	data = str.substr(pos1 + 1, pos2 - pos1 - 2);
 	produtos.push_back(str.substr(pos2 + 1, str.size() - pos2 - 1));
-}
+*/}
 
 void Transacao::save(ofstream & out) const{ // transacao guardada como na forma de  idcliente ; data ; lista produtos
 	// A IMPLEMENTAR

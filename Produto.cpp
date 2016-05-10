@@ -2,7 +2,7 @@
 
 
 Produto::Produto(ifstream & in){ // nome ; custo
-	stringstream ss;
+/*	stringstream ss;
 	string str;
 	int pos = -5;
 	ss << in;
@@ -13,7 +13,7 @@ Produto::Produto(ifstream & in){ // nome ; custo
 		}
 		this->nome = str.substr(0, pos - 1);
 		this->custo = stof(str.substr(pos + 1, str.size() - pos - 1));
-	}
+	}*/
 }
 
 string Produto::getNome() const {
@@ -39,7 +39,5 @@ ostream& operator<<(ostream& out, const Produto & prod){
 
 
 bool operator<(const Produto &prod1, const Produto &prod2){
-	bool temp = false;
-	//if (prod1.)
-	return temp;
+	return (prod1.custo < prod2.custo);
 }
